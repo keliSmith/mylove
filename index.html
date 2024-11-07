@@ -47,9 +47,8 @@
 </head>
 
 <body>
-    <audio autoplay="autopaly">
-        <source src="renxi.mp3" type="audio/mp3" />
-    </audio>
+    <iframe src="/audio/mylove.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
+    <audio id="audio" src="/audio/mylove.mp3" autoplay></audio>
 
     <div id="main">
         <div id="wrap">
@@ -98,7 +97,11 @@
             <canvas id="canvas" width="1100" height="680"></canvas>
         </div>
     </div>
+    
     <script>
+        document.addEventListener('WeixinJSBridgeReady', () => {
+            document.getElementById('audio').play()
+        }, false)
     </script>
 
     <script>
